@@ -9,6 +9,8 @@ const WIDTH = 7;
 const HEIGHT = 6;
 
 let currPlayer = 1; // active player: 1 or 2
+let playerTurn = document.querySelector('h2')
+
 const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 /** makeBoard: create in-JS board structure:
@@ -108,6 +110,17 @@ function handleClick(evt) {
 
     // switch players
     currPlayer = currPlayer === 1 ? 2 : 1;
+
+    if (currPlayer === 2) {
+        playerTurn.classList.add("two")
+        playerTurn.classList.remove("one")
+
+    } else {
+        playerTurn.classList.add("one")
+        playerTurn.classList.remove("two")
+
+    }
+    playerTurn.innerText = `It's Player ${currPlayer}'s turn`
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */

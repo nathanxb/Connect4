@@ -1,4 +1,13 @@
+body {
+    text-align: center;
+}
+
 /* game board table */
+#game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #board td {
     width: 50px;
